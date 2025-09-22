@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelola Kita - Solusi Pengelolaan Kas Organisasi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateX(-50px) translateY(-50px); }
+            100% { transform: translateX(50px) translateY(50px); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 15px 30px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .cta-button:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Problem Section */
+        .problem-section {
+            padding: 4rem 0;
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            color: white;
+            position: relative;
+        }
+
+        .problem-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .problem-card {
+            background: rgba(255,255,255,0.15);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .problem-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .problem-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        /* Solution Section */
+        .solution-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .solution-card {
+            background: rgba(255,255,255,0.1);
+            padding: 2.5rem;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .solution-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+
+        .solution-card:hover::before {
+            animation: shine 1s ease-in-out;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); opacity: 1; }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); opacity: 0; }
+        }
+
+        .solution-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .solution-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .solution-title {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 4rem 0;
+            background: linear-gradient(45deg, #a8edea, #fed6e3);
+            color: #333;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2d3436;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #74b9ff;
+        }
+
+        .footer-links {
+            margin: 2rem 0;
+        }
+
+        .footer-links a {
+            color: #74b9ff;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <section class="header">
+        <div class="container">
+            <div class="logo">💰 Kelola Kita</div>
+            <div class="tagline">Solusi Cerdas Pengelolaan Kas Organisasi yang Mudah dan Terpercaya</div>
+            <a href="#solusi" class="cta-button">Lihat Solusi Kami</a>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="container">
+            <h2 class="section-title">Masalah Yang Sering Dihadapi Bendahara</h2>
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">📝</div>
+                    <div class="problem-title">Pencatatan Manual yang Rumit</div>
+                    <p>Bendahara sering kesulitan mencatat transaksi secara manual, rentan terhadap kesalahan penulisan dan perhitungan yang dapat merugikan organisasi.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="problem-icon">🔍</div>
+                    <div class="problem-title">Susah Melacak Transaksi</div>
+                    <p>Sulit untuk melacak riwayat transaksi, mencari bukti pembayaran, dan mengidentifikasi pola pengeluaran atau pemasukan organisasi.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="problem-icon">📊</div>
+                    <div class="problem-title">Laporan Keuangan Tidak Real-time</div>
+                    <p>Pembuatan laporan keuangan memakan waktu lama dan sering tidak up-to-date, sehingga pengambilan keputusan menjadi terhambat.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="problem-icon">👥</div>
+                    <div class="problem-title">Kurang Transparansi</div>
+                    <p>Anggota organisasi sulit mengakses informasi keuangan, menimbulkan ketidakpercayaan dan pertanyaan tentang pengelolaan dana.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="problem-icon">⏰</div>
+                    <div class="problem-title">Manajemen Waktu Buruk</div>
+                    <p>Bendahara menghabiskan terlalu banyak waktu untuk administrasi keuangan yang seharusnya bisa dialokasikan untuk kegiatan produktif lainnya.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="problem-icon">🔒</div>
+                    <div class="problem-title">Keamanan Data Rendah</div>
+                    <p>Data keuangan tersimpan di berbagai tempat tanpa backup yang memadai, berisiko hilang atau rusak saat dibutuhkan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution-section" id="solusi">
+        <div class="container">
+            <h2 class="section-title">Solusi Yang Kami Tawarkan</h2>
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <div class="solution-icon">🚀</div>
+                    <div class="solution-title">Otomatisasi Pencatatan</div>
+                    <p>Sistem pencatatan otomatis yang meminimalisir kesalahan manusia. Setiap transaksi tercatat dengan akurat dan tersinkronisasi secara real-time dengan database yang aman.</p>
+                </div>
+                
+                <div class="solution-card">
+                    <div class="solution-icon">📱</div>
+                    <div class="solution-title">Platform Digital Terintegrasi</div>
+                    <p>Satu platform untuk semua kebutuhan keuangan organisasi. Dapat diakses dari mana saja, kapan saja melalui web browser atau aplikasi mobile.</p>
+                </div>
+                
+                <div class="solution-card">
+                    <div class="solution-icon">📈</div>
+                    <div class="solution-title">Laporan Real-time & Analytics</div>
+                    <p>Dashboard interaktif dengan laporan keuangan real-time, grafik visual yang mudah dipahami, dan analisis tren keuangan untuk pengambilan keputusan yang lebih baik.</p>
+                </div>
+                
+                <div class="solution-card">
+                    <div class="solution-icon">🤝</div>
+                    <div class="solution-title">Transparansi Penuh</div>
+                    <p>Sistem akses bertingkat yang memungkinkan anggota organisasi melihat informasi keuangan sesuai dengan hak akses mereka, meningkatkan kepercayaan dan akuntabilitas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">Fitur Unggulan Kelola Kita</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💳</div>
+                    <h3>Multi-Payment Gateway</h3>
+                    <p>Integrasi dengan berbagai metode pembayaran digital dan pencatatan otomatis</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h3>Notifikasi Pintar</h3>
+                    <p>Pemberitahuan otomatis untuk deadline, transaksi, dan update penting lainnya</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📄</div>
+                    <h3>Template Laporan</h3>
+                    <p>Berbagai template laporan siap pakai sesuai standar akuntansi organisasi</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>Keamanan Tingkat Bank</h3>
+                    <p>Enkripsi data end-to-end dan backup otomatis untuk menjaga keamanan informasi</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍💼</div>
+                    <h3>Manajemen User</h3>
+                    <p>Sistem role dan permission yang fleksibel untuk berbagai tingkat akses</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Budget Planning</h3>
+                    <p>Tools perencanaan anggaran dengan monitoring dan alert otomatis</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">Kelola Kita</div>
+            <p>Memberdayakan organisasi dengan pengelolaan keuangan yang cerdas dan transparan</p>
+            <div class="footer-links">
+                <a href="#tentang">Tentang Kami</a>
+                <a href="#kontak">Kontak</a>
+                <a href="#bantuan">Bantuan</a>
+                <a href="#privasi">Kebijakan Privasi</a>
+            </div>
+            <p style="margin-top: 2rem; opacity: 0.7;">&copy; 2024 Kelola Kita. Semua hak dilindungi.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add loading animation to cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards
+        document.querySelectorAll('.problem-card, .solution-card, .feature-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Add hover effect to CTA button
+        const ctaButton = document.querySelector('.cta-button');
+        ctaButton.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px) scale(1.05)';
+        });
+        
+        ctaButton.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    </script>
+</body>
+</html>
