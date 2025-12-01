@@ -7,13 +7,13 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: #0B1D39;
     overflow-x: hidden;
 }
 
 /* Header */
 .header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #005DFF 0%, #4DA3FF 100%);
     color: white;
     padding: 2rem 0;
     text-align: center;
@@ -49,7 +49,7 @@ body {
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 2px 2px 4px #0B1D39;
 }
 
 .tagline {
@@ -59,10 +59,10 @@ body {
 }
 
 .cta-button {
-    background: rgba(255,255,255,0.2);
+    background: #005DFF;
     color: white;
     padding: 15px 30px;
-    border: 2px solid rgba(255,255,255,0.3);
+    border: 2px solid #4DA3FF;
     border-radius: 50px;
     text-decoration: none;
     font-weight: bold;
@@ -71,7 +71,7 @@ body {
 }
 
 .cta-button:hover {
-    background: rgba(255,255,255,0.3);
+    background: #39C0FA;
     transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
@@ -79,8 +79,8 @@ body {
 /* Problem Section */
 .problem-section {
     padding: 4rem 0;
-    background: linear-gradient(45deg, #ff6b6b, #feca57);
-    color: white;
+    background: linear-gradient(45deg, #4DA3FF, #E6F1FF);
+    color: black;
     position: relative;
 }
 
@@ -91,7 +91,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0,0,0,0.1);
+    background: #E6F1FF;
 }
 
 .section-title {
@@ -111,12 +111,10 @@ body {
 }
 
 .problem-card {
-    background: rgba(255,255,255,0.15);
-    padding: 2rem;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.2);
-    transition: transform 0.3s ease;
+    background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
 .problem-card:hover {
@@ -137,8 +135,8 @@ body {
 /* Features Section */
 .features-section {
     padding: 4rem 0;
-    background: linear-gradient(45deg, #a8edea, #fed6e3);
-    color: #333;
+    background: linear-gradient(45deg, #4DA3FF, #E6F1FF);
+    color: #0B1D39;
 }
 
 .features-grid {
@@ -151,7 +149,7 @@ body {
     background: white;
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px #E6F1FF;
     text-align: center;
     transition: all 0.3s ease;
 }
@@ -164,7 +162,7 @@ body {
 .feature-icon {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: #667eea;
+    color: #005DFF;
 }
 
 /* Footer */
@@ -175,27 +173,6 @@ body {
     padding: 3rem 0;
 }
 
-.footer-logo {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    color: #74b9ff;
-}
-
-.footer-links {
-    margin: 2rem 0;
-}
-
-.footer-links a {
-    color: #74b9ff;
-    text-decoration: none;
-    margin: 0 1rem;
-    transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-    color: white;
-}
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -220,7 +197,7 @@ body {
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: #0B1D39;
     overflow-x: hidden;
 }
 
@@ -236,12 +213,6 @@ body {
     transition: all 0.3s ease;
 }
 
-.navbar.scrolled {
-    background: rgba(102, 126, 234, 0.95);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-}
-
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -255,7 +226,7 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 2px 2px 4px 0B1D39;
 }
 
 .nav-menu {
@@ -316,7 +287,7 @@ body {
 
 /* Header */
 .header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #005DFF 0%, #4DA3FF 100%);
     color: white;
     padding: 8rem 0 2rem 0;
     text-align: center;
@@ -340,7 +311,7 @@ body {
    Produk Page Styling
    ========================= */
 .hero-produk {
-    background: linear-gradient(135deg, #6c5ce7, #0984e3);
+    background: linear-gradient(135deg, #005DFF, #4DA3FF);
     padding: 8rem 0 3rem;
 }
 
@@ -354,7 +325,7 @@ body {
     max-width: 800px;
     margin: 0 auto 3rem;
     font-size: 1.1rem;
-    color: #333;
+    color: #0B1D39;
 }
 
 .overview-stats {
@@ -368,7 +339,7 @@ body {
     background: white;
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px #E6F1FF;
     min-width: 200px;
     transition: transform 0.3s ease;
 }
@@ -378,18 +349,18 @@ body {
 }
 
 .stat-card h3 {
-    color: #0984e3;
+    color: #4DA3FF;
     font-size: 2rem;
 }
 
 .product-features {
-    background: linear-gradient(135deg, #74b9ff, #0984e3);
+    background: linear-gradient(135deg, #74b9ff, #4DA3FF);
     color: white;
     padding: 5rem 0;
 }
 .feature-card {
     background: rgba(255, 255, 255, 0.9); /* ubah dari putih polos ke semi transparan */
-    color: #333; /* teks jadi gelap agar terbaca di background biru */
+    color: #0B1D39; /* teks jadi gelap agar terbaca di background biru */
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
@@ -398,26 +369,26 @@ body {
 }
 
 .feature-card h3 {
-    color: #0984e3; /* judul jadi biru gelap agar kontras */
+    color: #4DA3FF; /* judul jadi biru gelap agar kontras */
     margin-bottom: 0.8rem;
     font-weight: bold;
 }
 
 .feature-card p {
-    color: #333; /* pastikan deskripsi terbaca */
+    color: #0B1D39; /* pastikan deskripsi terbaca */
     font-size: 1rem;
     line-height: 1.5;
 }
 
 .feature-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 15px 40px #0B1D39;
 }
 
 
 .value-section {
     padding: 5rem 0;
-    background: linear-gradient(135deg, #a8edea, #fed6e3);
+    background: linear-gradient(135deg, #4DA3FF, #E6F1FF);
 }
 
 .value-grid {
@@ -431,7 +402,7 @@ body {
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px #E6F1FF;
     transition: all 0.3s ease;
 }
 
@@ -441,7 +412,7 @@ body {
 }
 
 .cta-section {
-    background: linear-gradient(135deg, #6c5ce7, #00cec9);
+    background: linear-gradient(135deg, #005DFF, #4DA3FF);
     color: white;
     text-align: center;
     padding: 5rem 2rem;
@@ -477,7 +448,7 @@ body {
 
 .section-title {
   font-size: 2.2rem;
-  color: #333;
+  color: #0B1D39;
   margin-bottom: 0.5rem;
 }
 
@@ -511,13 +482,13 @@ body {
 
 .pricing-card h3 {
   font-size: 1.5rem;
-  color: #333;
+  color: #0B1D39;
   margin-bottom: 1rem;
 }
 
 .pricing-card .price {
   font-size: 2.5rem;
-  color: #667eea;
+  color: #005DFF;
   font-weight: bold;
   margin-bottom: 1.5rem;
 }
@@ -544,7 +515,7 @@ body {
   display: inline-block;
   padding: 0.8rem 1.5rem;
   border-radius: 50px;
-  background: #667eea;
+  background: #005DFF;
   color: white;
   text-decoration: none;
   font-weight: bold;
@@ -557,7 +528,7 @@ body {
 }
 
 .pricing-btn.primary {
-  background: #0984e3;
+  background: #4DA3FF;
 }
 
 .pricing-btn.primary:hover {
@@ -566,7 +537,7 @@ body {
 
 /* Card unggulan */
 .featured {
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #005DFF, #4DA3FF);
   color: white;
   transform: scale(1.05);
 }
@@ -578,7 +549,7 @@ body {
 
 .featured .pricing-btn {
   background: white;
-  color: #667eea;
+  color: #005DFF;
 }
 
 .featured .pricing-btn:hover {
@@ -610,7 +581,7 @@ body {
 
 /* =================== CONTACT SECTION =================== */
 .contact-section {
-  background: linear-gradient(135deg, #ff6b6b, #feca57);
+  background: linear-gradient(135deg, #4DA3FF, #E6F1FF);
   color: white;
   padding: 5rem 2rem;
 }
@@ -659,7 +630,7 @@ body {
   border: none;
   border-radius: 4px;
   font-size: 1rem;
-  color: #333;
+  color: #0B1D39;
   resize: none;
 }
 
@@ -683,7 +654,7 @@ body {
 
 .contact-btn:hover {
   background: white;
-  color: #ff6b6b;
+  color: #4DA3FF;
   transform: translateY(-2px);
 }
 

@@ -1,6 +1,6 @@
 /* Statistik Section */
 .stats-section {
-  background: #f8f9fb;
+  background: #E6F1FF;
   padding: 4rem 0;
   text-align: center;
 }
@@ -22,16 +22,16 @@
 
 .stat h3 {
   font-size: 2.2rem;
-  color: #667eea;
+  color: #005DFF;
 }
 
 .stat p {
-  color: #555;
+  color: #6B7280;
 }
 
 /* Why Section */
 .why-section {
-  background: linear-gradient(135deg, #74b9ff, #0984e3);
+  background: linear-gradient(135deg, #4DA3FF, #005DFF);
   color: white;
   padding: 5rem 0;
   text-align: center;
@@ -47,13 +47,13 @@
   margin-top: 1.5rem;
   display: inline-block;
   background: white;
-  color: #0984e3;
+  color: #005DFF;
 }
 
 /* How Section */
 .how-section {
   padding: 5rem 0;
-  background: #f7f9fc;
+  background: #E6F1FF;
   text-align: center;
 }
 
@@ -75,12 +75,12 @@
 .how-icon {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #667eea;
+  color: #005DFF;
 }
 
 /* Testimoni Section */
 .testimoni-section {
-  background: linear-gradient(135deg, #a8edea, #fed6e3);
+  background: linear-gradient(135deg, #4DA3FF, #E6F1FF);
   padding: 5rem 0;
   text-align: center;
 }
@@ -102,12 +102,12 @@
 
 .testimoni-card p {
   font-style: italic;
-  color: #333;
+  color: #0B1D39;
 }
 
 .testimoni-card h4 {
   margin-top: 1rem;
-  color: #0984e3;
+  color: #005DFF;
 }
 
 /* Responsive Design */
